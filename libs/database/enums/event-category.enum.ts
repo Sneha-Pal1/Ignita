@@ -1,0 +1,6 @@
+export enum EventCategory {
+  HACKATHON = 'HACKATHON',
+  INTERNSHIP = 'INTERNSHIP',
+  CODING_FEST = 'CODING_FEST',
+  WORKSHOP = 'WORKSHOP',
+}
