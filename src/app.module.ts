@@ -7,12 +7,14 @@ import { EventsModule } from './events/events.module';
 import { AlertsModule } from './alerts/alerts.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Bookmark, User, Event } from 'libs/database/entities';
+import { Bookmark, Event } from 'libs/database/entities';
+import { User } from './auth/entities/user.entity';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: '.env',
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',

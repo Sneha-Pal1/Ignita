@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 import { EventCategory } from '../enums/event-category.enum';
 import { EventType } from '../enums/event-type.enum';
-import { User } from './user.entity';
+import { User } from 'src/auth/entities/user.entity';
 
 @Entity('events')
 export class Event {

@@ -4,7 +4,7 @@ import {
   ManyToOne,
   CreateDateColumn,
 } from 'typeorm';
-import { User } from './user.entity';
+import { User } from 'src/auth/entities/user.entity';
 import { Event } from './event.entity';
 
 @Entity('bookmarks')
