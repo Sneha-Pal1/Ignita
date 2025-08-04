@@ -5,7 +5,7 @@ import {
   CreateDateColumn,
 } from 'typeorm';
 import { User } from 'src/auth/entities/user.entity';
-import { Event } from './event.entity';
+import { Event } from 'src/events/entities/event.entity';
 
 @Entity('bookmarks')
 export class Bookmark {

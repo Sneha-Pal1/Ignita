@@ -1,3 +1,3 @@
 export * from '../../../src/auth/entities/user.entity';
-export * from './event-category.enum';
-export * from './event-type.enum';
+export * from '../../../src/events/enums/event-category.enum';
+export * from '../../../src/events/enums/event-type.enum';
