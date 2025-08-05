@@ -7,6 +7,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Bookmark, Event } from 'libs/database/entities';
 import { User } from './auth/entities/user.entity';
+import { BookmarkModule } from './bookmark/bookmark.module';
+import { LinkedinPostModule } from './linkedin-post/linkedin-post.module';
 
 @Module({
   imports: [
@@ -23,6 +25,8 @@ import { User } from './auth/entities/user.entity';
     UserModule,
     EventsModule,
     AlertsModule,
+    BookmarkModule,
+    LinkedinPostModule,
   ],
   controllers: [],
   providers: [],
