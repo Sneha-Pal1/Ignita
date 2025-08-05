@@ -12,10 +12,10 @@ export class Bookmark {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(() => User)
+  @ManyToOne(() => User, { onDelete: 'CASCADE' })
   user: User;
 
-  @ManyToOne(() => Event)
+  @ManyToOne(() => Event, { onDelete: 'CASCADE' })
   event: Event;
 
   @CreateDateColumn()
