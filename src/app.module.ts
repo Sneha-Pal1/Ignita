@@ -5,10 +5,11 @@ import { EventsModule } from './events/events.module';
 import { AlertsModule } from './alerts/alerts.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Bookmark, Event } from 'libs/database/entities';
 import { User } from './auth/entities/user.entity';
 import { BookmarkModule } from './bookmark/bookmark.module';
 import { LinkedinPostModule } from './linkedin-post/linkedin-post.module';
+import { Event } from '../src/events/entities/event.entity';
+import { Bookmark } from '../src/bookmark/entities/bookmark.entity';
 
 @Module({
   imports: [
