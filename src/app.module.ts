@@ -11,6 +11,7 @@ import { LinkedinPostModule } from './linkedin-post/linkedin-post.module';
 import { Event } from '../src/events/entities/event.entity';
 import { Bookmark } from '../src/bookmark/entities/bookmark.entity';
 import { AnalyticsModule } from './analytics/analytics.module';
+import { NotificationModule } from './notification/notification.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { AnalyticsModule } from './analytics/analytics.module';
     BookmarkModule,
     LinkedinPostModule,
     AnalyticsModule,
+    NotificationModule,
   ],
   controllers: [],
   providers: [],
