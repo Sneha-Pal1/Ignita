@@ -28,6 +28,9 @@ export class Event {
   type: EventType;
 
   @Column()
+  organizer: string;
+
+  @Column()
   registrationLink: string;
 
   @Column({ type: 'timestamp' })
