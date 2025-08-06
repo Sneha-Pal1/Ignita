@@ -10,6 +10,7 @@ import { BookmarkModule } from './bookmark/bookmark.module';
 import { LinkedinPostModule } from './linkedin-post/linkedin-post.module';
 import { Event } from '../src/events/entities/event.entity';
 import { Bookmark } from '../src/bookmark/entities/bookmark.entity';
+import { AnalyticsModule } from './analytics/analytics.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { Bookmark } from '../src/bookmark/entities/bookmark.entity';
     AlertsModule,
     BookmarkModule,
     LinkedinPostModule,
+    AnalyticsModule,
   ],
   controllers: [],
   providers: [],
