@@ -25,7 +25,9 @@ export class AuthService {
     const exits = await this.userRepo.findOneBy({
       email: dto.email,
     });
-    if (!exits) throw new ConflictException('Email already registered');
+    if (exits) {
+      throw new ConflictException('Email already registered');
+    }
     const hash = await this.hashPassword(dto.password);
     const user = this.userRepo.create({
       ...dto,

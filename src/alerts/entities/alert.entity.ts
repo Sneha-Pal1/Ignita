@@ -10,17 +10,17 @@ import { User } from '../../auth/entities/user.entity';
 @Entity('alerts')
 export class Alert {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  message: string;
+  message!: string;
 
   @Column({ default: false })
-  read: boolean;
+  read!: boolean;
 
   @ManyToOne(() => User, { onDelete: 'CASCADE' })
-  user: User;
+  user!: User;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 }

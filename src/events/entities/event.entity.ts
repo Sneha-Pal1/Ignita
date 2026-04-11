@@ -8,43 +8,43 @@ import {
 } from 'typeorm';
 import { EventCategory } from '../enums/event-category.enum';
 import { EventType } from '../enums/event-type.enum';
-import { User } from 'src/auth/entities/user.entity';
+import { User } from '../../auth/entities/user.entity';
 
 @Entity('events')
 export class Event {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  title: string;
+  title!: string;
 
-  @Column('text')
-  description: string;
+  @Column('text', { nullable: true })
+  description?: string;
 
   @Column({ type: 'enum', enum: EventCategory })
-  category: EventCategory;
+  category!: EventCategory;
 
   @Column({ type: 'enum', enum: EventType })
-  type: EventType;
+  type!: EventType;
 
-  @Column()
-  organizer: string;
+  @Column({ nullable: true })
+  organizer?: string;
 
-  @Column()
-  registrationLink: string;
+  @Column({ nullable: true })
+  registrationLink?: string;
 
-  @Column({ type: 'timestamp' })
-  startDate: Date;
+  @Column({ type: 'timestamp', nullable: true })
+  startDate?: Date;
 
-  @Column({ type: 'timestamp' })
-  endDate: Date;
+  @Column({ type: 'timestamp', nullable: true })
+  endDate?: Date;
 
-  @ManyToOne(() => User, (user) => user.id)
-  createdBy: User;
+  @ManyToOne(() => User, (user) => user.id, { nullable: true })
+  createdBy?: User;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
 }

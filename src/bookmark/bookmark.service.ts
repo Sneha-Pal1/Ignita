@@ -2,8 +2,8 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Bookmark } from './entities/bookmark.entity';
 import { Repository } from 'typeorm';
-import { User } from 'src/auth/entities/user.entity';
-import { Event } from 'src/events/entities/event.entity';
+import { User } from '../auth/entities/user.entity';
+import { Event } from '../events/entities/event.entity';
 @Injectable()
 export class BookmarkService {
   constructor(

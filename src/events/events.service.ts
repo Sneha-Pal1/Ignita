@@ -4,6 +4,7 @@ import { Event } from './entities/event.entity';
 import { Repository } from 'typeorm';
 import { CreateEventDto } from './dto/create-event.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
+import { User } from '../auth/entities/user.entity';
 
 @Injectable()
 export class EventsService {
@@ -12,8 +13,11 @@ export class EventsService {
     private readonly eventRepo: Repository<Event>,
   ) {}
 
-  async create(dto: CreateEventDto) {
-    const event = this.eventRepo.create(dto);
+  async create(dto: CreateEventDto, user: User) {
+    const event = this.eventRepo.create({
+      ...dto,
+      createdBy: user,
+    });
     return await this.eventRepo.save(event);
   }
   async findAll() {

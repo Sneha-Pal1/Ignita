@@ -8,8 +8,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './auth/entities/user.entity';
 import { BookmarkModule } from './bookmark/bookmark.module';
 import { LinkedinPostModule } from './linkedin-post/linkedin-post.module';
-import { Event } from '../src/events/entities/event.entity';
-import { Bookmark } from '../src/bookmark/entities/bookmark.entity';
+import { Event } from './events/entities/event.entity';
+import { Bookmark } from './bookmark/entities/bookmark.entity';
 import { AnalyticsModule } from './analytics/analytics.module';
 import { NotificationModule } from './notification/notification.module';
 
@@ -23,6 +23,8 @@ import { NotificationModule } from './notification/notification.module';
       type: 'postgres',
       url: process.env.DATABASE_URL,
       entities: [User, Bookmark, Event],
+      synchronize: true,
+      logging: true,
     }),
     AuthModule,
     UserModule,

@@ -4,20 +4,21 @@ import {
   ManyToOne,
   CreateDateColumn,
 } from 'typeorm';
-import { User } from 'src/auth/entities/user.entity';
-import { Event } from 'src/events/entities/event.entity';
+
+import { User } from '../../auth/entities/user.entity';
+import { Event } from '../../events/entities/event.entity';
 
 @Entity('bookmarks')
 export class Bookmark {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @ManyToOne(() => User, { onDelete: 'CASCADE' })
-  user: User;
+  user!: User;
 
   @ManyToOne(() => Event, { onDelete: 'CASCADE' })
-  event: Event;
+  event!: Event;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 }

@@ -9,9 +9,11 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { EventsService } from './events.service';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { CreateEventDto } from './dto/create-event.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
+import { CurrentUser } from '../auth/decorators/current-user.decorator';
+import { User } from '../auth/entities/user.entity';
 
 @Controller('events')
 export class EventsController {
@@ -19,8 +21,8 @@ export class EventsController {
 
   @UseGuards(JwtAuthGuard)
   @Post()
-  create(@Body() dto: CreateEventDto) {
-    return this.eventService.create(dto);
+  create(@Body() dto: CreateEventDto, @CurrentUser() user: User) {
+    return this.eventService.create(dto, user);
   }
   @UseGuards(JwtAuthGuard)
   @Get()
